@@ -274,7 +274,7 @@ sub getStyles {
 	my $styles = {};
 	if(!$localOnly) {
 		my $http = LWP::UserAgent->new;
-		my $response = $http->get("http://erlandplugins.googlecode.com/svn/CustomClock/trunk/clockstyles7.json");
+		my $response = $http->get("http://erland.github.io/squeezebox-customclock/clockstyles7.json");
 		if($response->is_success) {
 			my $jsonStyles = $response->content;
 			eval {
