@@ -63,9 +63,9 @@ sub handler {
 	}
 	$params->{'subpages'} = \%currentSubPages;
 	$params->{'subpage'} = $class->currentPage($client,$params);
-	$params->{'licensemanager'} = Plugins::CustomClockHelper::Plugin::isPluginsInstalled($client,'LicenseManagerPlugin');
-	my $validateRequest = Slim::Control::Request::executeRequest($client,['licensemanager','validate','application:CustomClock']);
-	$params->{'licensed'} = $validateRequest->getResult("result");
+	$params->{'licensemanager'} = 1; #Plugins::CustomClockHelper::Plugin::isPluginsInstalled($client,'LicenseManagerPlugin');
+	#my $validateRequest = Slim::Control::Request::executeRequest($client,['licensemanager','validate','application:CustomClock']);
+	$params->{'licensed'} = 1; #$validateRequest->getResult("result");
 	return $class->SUPER::handler($client, $params);
 }
 		
